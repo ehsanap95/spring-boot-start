@@ -1,48 +1,37 @@
 package com.melody1music.project.music.entity;
 
-public class Person {
-	
-	private String id;
-	
+import javax.persistence.Entity;
+
+import com.melody1music.project.framework.entity.BaseEntity;
+import com.melody1music.project.music.dto.PersonDTO;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Setter
+@Getter
+public class Person extends BaseEntity<Person, PersonDTO>{
+		
 	private String name;
 	
 	private String age;
 
-	public Person(String id, String name, String age) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.age = age;
+	@Override
+	public Person convertDataTransferObjectToEntity(PersonDTO DTO) {
+		this.setId(DTO.getId());
+		this.setAge(DTO.getAge());
+		this.setName(DTO.getName());
+		return this;
 	}
 
-	public Person() {
-		super();
+	@Override
+	public PersonDTO getDataTransferObject() {
+		PersonDTO personDTO=new PersonDTO();
+		personDTO.setId(this.getId());
+		personDTO.setName(this.getName());
+		personDTO.setAge(this.getAge());
+		return personDTO;
 	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getAge() {
-		return age;
-	}
-
-	public void setAge(String age) {
-		this.age = age;
-	}
-	
-	
 	
 }

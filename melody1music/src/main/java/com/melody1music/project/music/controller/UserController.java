@@ -20,7 +20,7 @@ public class UserController {
 	
 	@PostMapping("/createUser")
 	public Person createUser(@RequestHeader String name) {
-		return new Person("1",name,"12");
+		return null;
 	}
 	
 	@PutMapping("/updateUser")
