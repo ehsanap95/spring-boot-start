@@ -1,4 +1,4 @@
-package com.example.rest.controller;
+package com.melody1music.project.music.controller;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.rest.object.Person;
+import com.melody1music.project.music.entity.Person;
  
 @RestController
 public class UserController {

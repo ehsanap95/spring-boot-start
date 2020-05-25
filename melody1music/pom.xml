@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.6.RELEASE</version>
+		<version>2.3.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>restFullSample</artifactId>
+	<groupId>com.melody1music</groupId>
+	<artifactId>melody1music</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>restFullSample</name>
-	<description>Demo project for Spring Boot</description>
+	<name>melody1music</name>
+	<description>Melody1Music Application</description>
 
     <packaging>war</packaging>
 
@@ -22,7 +22,7 @@
 
 	<dependencies>
 	
-	<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -44,14 +44,14 @@
 			</exclusions>
 		</dependency>
 		
-	<dependency>
+		<dependency>
 		<groupId>org.projectlombok</groupId>
 		<artifactId>lombok</artifactId>
-		<version>1.18.12</version>
+		<version>1.18.12</version><!--$NO-MVN-MAN-VER$-->
 		<scope>provided</scope>
-	</dependency>
-</dependencies>
+        </dependency>
 		
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -61,5 +61,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
