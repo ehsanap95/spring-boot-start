@@ -13,6 +13,8 @@ import lombok.Setter;
 @Getter
 public class Person extends BaseEntity<Person, PersonDTO>{
 		
+	private static final long serialVersionUID = 1L;
+
 	private String name;
 	
 	private String age;
@@ -20,6 +22,7 @@ public class Person extends BaseEntity<Person, PersonDTO>{
 	@Override
 	public Person convertDataTransferObjectToEntity(PersonDTO DTO) {
 		this.setId(DTO.getId());
+		this.setVersion(DTO.getVersion());
 		this.setAge(DTO.getAge());
 		this.setName(DTO.getName());
 		return this;
@@ -29,6 +32,7 @@ public class Person extends BaseEntity<Person, PersonDTO>{
 	public PersonDTO getDataTransferObject() {
 		PersonDTO personDTO=new PersonDTO();
 		personDTO.setId(this.getId());
+		personDTO.setVersion(this.getVersion());
 		personDTO.setName(this.getName());
 		personDTO.setAge(this.getAge());
 		return personDTO;
