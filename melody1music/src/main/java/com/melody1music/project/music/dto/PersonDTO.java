@@ -9,9 +9,6 @@ import lombok.Setter;
 @Getter
 public class PersonDTO extends BaseDTO{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private String name;
