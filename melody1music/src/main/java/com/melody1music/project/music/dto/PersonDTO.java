@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Setter
-@Getter
+@Getter 
 public class PersonDTO extends BaseDTO{
 
 	private static final long serialVersionUID = 1L;
