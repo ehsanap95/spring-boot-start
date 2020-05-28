@@ -7,12 +7,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.melody1music.project.music.dto.PersonDTO;
 import com.melody1music.project.music.entity.Person;
 import com.melody1music.project.music.service.inter.IPersonService;
 
 @RestController
+@RequestMapping("/person")
 public class PersonController {
 	
 	@Autowired
@@ -24,13 +27,13 @@ public class PersonController {
 	}
 	
 	@GetMapping("/getPersonById")
-	public String getPersonById(@RequestHeader Long id) {
-		return "Person By Id:" + iPersonService.findById(id);
+	public PersonDTO getPersonById(@RequestHeader Long id) {
+		return iPersonService.findById(id);
 	}
 	
 	@GetMapping("/getPersonByName")
 	public String getPersonByName(@RequestHeader String name) {
-		return "Person By Name:" +iPersonService.findByName(name);
+		return "Person By Name:" +iPersonService.findByName(name).toString();
 	}
 	
 	@PostMapping("/createPerson")
@@ -41,7 +44,7 @@ public class PersonController {
 	}
 	
 	@PutMapping("/updatePerson")
-	public PersonDTO updatePerson(@RequestBody Person person) {
+	public PersonDTO updatePerson(@RequestBody PersonDTO person) {
 		return iPersonService.update(person);
 	}
 	
