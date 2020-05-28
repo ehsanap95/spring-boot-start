@@ -3,6 +3,7 @@ package com.melody1music.project.music.service.impl;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.melody1music.project.framework.service.impl.GenericServiceImpl;
 import com.melody1music.project.music.dto.PersonDTO;
@@ -10,6 +11,7 @@ import com.melody1music.project.music.entity.Person;
 import com.melody1music.project.music.repository.inter.IPersonRepository;
 import com.melody1music.project.music.service.inter.IPersonService;
 
+@Service
 public class PersonServiceImpl extends GenericServiceImpl<Person, PersonDTO> implements IPersonService {
 
 	@Autowired
