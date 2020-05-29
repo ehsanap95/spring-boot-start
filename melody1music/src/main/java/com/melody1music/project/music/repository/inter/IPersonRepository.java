@@ -12,4 +12,7 @@ public interface IPersonRepository extends IGenericRepository<Person>{
 	@Query("FROM Person p WHERE p.name = :name")
 	Person findByName(@Param("name") String name);
 	
+	@Query(value = "SELECT * FROM person p WHERE p.name = :name",nativeQuery = true)
+	Person findByNameNative(@Param("name") String name);
+	
 }

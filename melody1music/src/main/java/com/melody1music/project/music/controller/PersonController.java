@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.melody1music.project.music.dto.PersonDTO;
-import com.melody1music.project.music.entity.Person;
 import com.melody1music.project.music.service.inter.IPersonService;
 
 @RestController
@@ -33,7 +31,7 @@ public class PersonController {
 	
 	@GetMapping("/getPersonByName")
 	public String getPersonByName(@RequestHeader String name) {
-		return "Person By Name:" +iPersonService.findByName(name).toString();
+		return "Person By Name:" +iPersonService.findByNameNative(name);
 	}
 	
 	@PostMapping("/createPerson")

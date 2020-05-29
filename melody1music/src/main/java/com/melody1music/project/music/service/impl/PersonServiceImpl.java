@@ -23,6 +23,11 @@ public class PersonServiceImpl extends GenericServiceImpl<Person, PersonDTO> imp
 	}
 
 	@Override
+	public PersonDTO findByNameNative(String name) {
+		return iPersonRepository.findByNameNative(name).getDataTransferObject(); 
+	}
+	
+	@Override
 	public PersonDTO save(PersonDTO entity) {
 		Person person=new Person();
 		person.setName(entity.getName());

@@ -13,5 +13,6 @@ public interface IPersonService extends IGenericService<Person, PersonDTO>{
     PersonDTO update(PersonDTO entity);
 	
 	PersonDTO findByName(String name);
-	
+
+	PersonDTO findByNameNative(String name);
 }
