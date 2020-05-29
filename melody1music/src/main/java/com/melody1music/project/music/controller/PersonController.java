@@ -29,7 +29,7 @@ public class PersonController {
 		return iPersonService.findById(id);
 	}
 	
-	@GetMapping("/getPersonByName")
+	@GetMapping("/getPersonByName") 
 	public String getPersonByName(@RequestHeader String name) {
 		return "Person By Name:" +iPersonService.findByNameNative(name);
 	}
