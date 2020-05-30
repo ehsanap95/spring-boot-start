@@ -22,6 +22,7 @@ public class Person extends BaseEntity<Person, PersonDTO>{
 	@Override
 	public Person convertDataTransferObjectToEntity(PersonDTO DTO) {
 		this.setId(DTO.getId());
+		this.setPublishingDate(DTO.getPublishingDate());
 		this.setVersion(DTO.getVersion());
 		this.setAge(DTO.getAge());
 		this.setName(DTO.getName());
@@ -32,6 +33,7 @@ public class Person extends BaseEntity<Person, PersonDTO>{
 	public PersonDTO getDataTransferObject() {
 		PersonDTO personDTO=new PersonDTO();
 		personDTO.setId(this.getId());
+		personDTO.setPublishingDate(this.getPublishingDate());
 		personDTO.setVersion(this.getVersion());
 		personDTO.setName(this.getName());
 		personDTO.setAge(this.getAge());

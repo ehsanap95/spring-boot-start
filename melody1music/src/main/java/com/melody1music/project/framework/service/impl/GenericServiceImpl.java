@@ -1,5 +1,6 @@
 package com.melody1music.project.framework.service.impl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +23,7 @@ public class GenericServiceImpl <T extends BaseEntity<T,D>,D extends BaseDTO> im
 	
 	@Override
     public D save(T entity) {
+		entity.setPublishingDate(LocalDateTime.now());
 		return iGenericRepository.save(entity).getDataTransferObject();
     }
 
