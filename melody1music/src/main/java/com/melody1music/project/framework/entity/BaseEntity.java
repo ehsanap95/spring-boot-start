@@ -1,12 +1,12 @@
 package com.melody1music.project.framework.entity;
 
 import java.io.Serializable;
-import javax.persistence.Column;
+import java.util.UUID;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
+import org.hibernate.annotations.GenericGenerator;
 import com.melody1music.project.framework.dto.BaseDTO;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,10 +20,10 @@ public abstract class BaseEntity <T extends BaseEntity<?, ?>,D extends BaseDTO> 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name = "ID",unique = true,nullable = false)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long id;
-	
+	@GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID",strategy = "org.hibernate.id.UUIDGenerator")
+	private UUID id;
+			
 	@Version
 	private int version;
 	

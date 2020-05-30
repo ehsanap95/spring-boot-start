@@ -3,6 +3,7 @@ package com.melody1music.project.framework.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,7 +33,7 @@ public class GenericServiceImpl <T extends BaseEntity<T,D>,D extends BaseDTO> im
 	}
 
 	@Override
-	public D findById(Long entityId) {
+	public D findById(UUID entityId) {
 		Optional<T> optional = iGenericRepository.findById(entityId);
 	   	return optional.isPresent()?(optional.get()).getDataTransferObject():null;
 	}
@@ -43,7 +44,7 @@ public class GenericServiceImpl <T extends BaseEntity<T,D>,D extends BaseDTO> im
 	}
 
 	@Override
-	public D updateById(T entity, Long entityId) {
+	public D updateById(T entity, UUID entityId) {
        	return iGenericRepository.findById(entityId).isPresent()? iGenericRepository.save(entity).getDataTransferObject():null;
 	}
 
@@ -53,7 +54,7 @@ public class GenericServiceImpl <T extends BaseEntity<T,D>,D extends BaseDTO> im
 	}
 
 	@Override
-	public void deleteById(Long entityId) {
+	public void deleteById(UUID entityId) {
 		iGenericRepository.deleteById(entityId);
 		
 	}

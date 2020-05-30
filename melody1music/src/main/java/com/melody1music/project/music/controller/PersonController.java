@@ -1,5 +1,7 @@
 package com.melody1music.project.music.controller;
 
+import java.util.List;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,12 +22,12 @@ public class PersonController {
 	private IPersonService iPersonService;
 	
 	@GetMapping("/getAllPersons")
-	public String getAllPersons() {
-		return "Get All Persons:"+iPersonService.findAll();
+	public List<PersonDTO> getAllPersons() {
+		return iPersonService.findAll();
 	}
 	
 	@GetMapping("/getPersonById")
-	public PersonDTO getPersonById(@RequestHeader Long id) {
+	public PersonDTO getPersonById(@RequestHeader UUID id) {
 		return iPersonService.findById(id);
 	}
 	
@@ -47,9 +49,9 @@ public class PersonController {
 	}
 	
 	@DeleteMapping("/deletePerson")
-	public String deleteUser(@RequestHeader Long id) {
+	public String deleteUser(@RequestHeader UUID id) {
 		iPersonService.deleteById(id);
-		return "Delete Person:";
+		return "Delete Person: ";
 	}
 
 }
