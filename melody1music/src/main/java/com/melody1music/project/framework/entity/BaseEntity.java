@@ -34,5 +34,6 @@ public abstract class BaseEntity <T extends BaseEntity<?, ?>,D extends BaseDTO> 
 			
 	@Version
 	private int version;
-	
+
+	private Boolean enabled;
 }
