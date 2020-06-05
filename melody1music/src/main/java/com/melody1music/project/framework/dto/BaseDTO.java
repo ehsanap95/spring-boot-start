@@ -18,5 +18,6 @@ public abstract class BaseDTO implements Serializable{
 	private LocalDateTime publishingDate;
 	
 	private int version;
-
+	
+	private Boolean enabled;
 }

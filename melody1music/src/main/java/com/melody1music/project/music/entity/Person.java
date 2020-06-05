@@ -1,10 +1,8 @@
 package com.melody1music.project.music.entity;
 
 import javax.persistence.Entity;
-
 import com.melody1music.project.framework.entity.BaseEntity;
 import com.melody1music.project.music.dto.PersonDTO;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,6 +22,7 @@ public class Person extends BaseEntity<Person, PersonDTO>{
 		this.setId(DTO.getId());
 		this.setPublishingDate(DTO.getPublishingDate());
 		this.setVersion(DTO.getVersion());
+		this.setEnabled(DTO.getEnabled());
 		this.setAge(DTO.getAge());
 		this.setName(DTO.getName());
 		return this;
@@ -35,6 +34,7 @@ public class Person extends BaseEntity<Person, PersonDTO>{
 		personDTO.setId(this.getId());
 		personDTO.setPublishingDate(this.getPublishingDate());
 		personDTO.setVersion(this.getVersion());
+		personDTO.setEnabled(this.getEnabled());
 		personDTO.setName(this.getName());
 		personDTO.setAge(this.getAge());
 		return personDTO;

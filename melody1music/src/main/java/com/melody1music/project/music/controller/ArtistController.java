@@ -1,7 +1,6 @@
 package com.melody1music.project.music.controller;
 
 import com.melody1music.project.music.dto.ArtistDTO;
-import com.melody1music.project.music.dto.PersonDTO;
 import com.melody1music.project.music.service.inter.IArtistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +28,23 @@ public class ArtistController {
 		for (ArtistDTO artistDTO : artistDTOs) {
 			System.out.println(artistDTO.getFullName());
 		}
+//		[
+//		    {
+//		        "id": "7f000101-7266-108f-8172-6680c4d70000",
+//		        "publishingDate": "2020-05-30T21:23:34.541",
+//		        "version": 0,
+//		    },
+//		    {
+//		        "id": "7f000101-7266-108f-8172-66820b1c0001",
+//		        "publishingDate": "2020-05-30T21:24:58.075",
+//		        "version": 0,
+//		    },
+//		    {
+//		        "id": "7f000101-7266-108f-8172-66820d7b0002",
+//		        "publishingDate": "2020-05-30T21:24:58.683",
+//		        "version": 0,
+//		    }
+//		]
 		return "Get It";
 	}
     

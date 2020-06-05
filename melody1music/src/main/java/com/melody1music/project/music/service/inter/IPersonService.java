@@ -9,7 +9,6 @@ public interface IPersonService extends IGenericService<Person, PersonDTO>{
 	
 	PersonDTO save(PersonDTO entity);
 	
-	
     PersonDTO update(PersonDTO entity);
 	
 	PersonDTO findByName(String name);

@@ -7,8 +7,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ArtistDTO extends BaseDTO {
-
-    private String fullName;
+	
+	private static final long serialVersionUID = 1L;
+	
+	private String fullName;
     private String nickName;
     private String birthDate;
     private String bio;
