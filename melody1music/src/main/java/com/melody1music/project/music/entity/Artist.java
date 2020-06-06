@@ -12,7 +12,9 @@ import javax.persistence.Entity;
 @Entity
 public class Artist extends BaseEntity<Artist, ArtistDTO> {
 
-    private String fullName;
+	private static final long serialVersionUID = 1L;
+	
+	private String fullName;
     private String nickName;
     private String birthDate;
     private String bio;
